@@ -3,3 +3,16 @@ exports.getPosts = (req, res, next) => {
         posts: {title: 'First Post', content: 'This is the first post'}
     });
 };
+
+exports.createPost = (req, res, next) => {
+    const title = req.body.title;
+    const content = req.body.content;
+    console.log(title);
+    console.log(content);
+    // Create post in db
+JSON.s
+    res.status(201).json({
+        message: 'Post created successfully !!',
+        post: {id: new Date().toISOString(), title: title, content: content}
+    });
+}
